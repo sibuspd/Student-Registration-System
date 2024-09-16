@@ -1,0 +1,248 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 50%, #ffffff 100%);
+    margin: 50px 2%;
+    margin-top: 30px;
+}
+
+.headerSection{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center; 
+}
+
+.headerSection > h1{
+    color: rgb(46, 3, 3);
+}
+
+.headerSection > p{
+    color: rgba(0, 0, 0, 0.822);
+    padding-left: 25px;
+    padding-right:25px;
+    text-align: justify;
+}
+
+.main-container{
+    width: 100%;
+    margin: 8px 1%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/** Form Container */
+.input-container{
+    width: 40vw;
+    padding-top: 12px;
+    margin-right: -35px; /**To adjust the view width */
+}
+
+/** The Form */
+.form-container{
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: bold;
+    color: rgb(12, 12, 114);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+}
+
+/** Label-InputBox pairs*/
+.form-group{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-group > label{
+    margin-right: 12px;
+    margin-left: 12px;
+}
+
+.form-group > input{
+    width: 50%;
+    margin-right: 50px;
+    padding: 3px;
+    border-radius: 2px;
+    outline: none;
+    font-weight: bold;
+    border-style: double;
+    border-color: black;
+    box-shadow: 2px 3px rgb(0, 2, 65);
+    background: linear-gradient(45deg, #dbd9d9 60%, #F7CE68 90%);
+}
+
+/** The Display Table Container */
+.display-container{
+    min-width: 55vw;
+    max-width: 98%;    
+    padding: 12px;
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #874800;
+    background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
+    border-radius: 5px;
+    max-height: 400px; 
+    overflow-y: auto; /** To enable vertical scrolling*/
+}
+
+/** Display Table */
+.dataTable{
+    width: 100%;   
+}
+
+/**Form Submission Button */
+.button-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.button-container > button{
+    padding: 8px;
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: rgb(241, 241, 130);
+    box-shadow: 2px 3px rgb(0, 2, 65);
+    color: rgb(0, 0, 0);
+    font-size: small;
+    font-weight: 600;
+    transition: 400ms;
+    font-family: cursive;
+}
+
+.button-container > button:hover {
+    background-color: rgb(0,0,0);
+    color: #F7CE68;
+    transition: 400ms;
+    cursor: pointer;
+  }
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    font-size: larger;
+}
+
+.footer > #gitHub{
+    color: rgb(3, 3, 67);
+}
+
+#gitLogo{
+    font-size: larger;
+    font-weight: 900;
+}
+
+.Internshala{
+    color: rgb(47, 47, 244);
+}
+
+/**Table Headers */
+.tableHeaders > th{
+    color: whitesmoke;
+    padding: 10px;
+    text-align: center;
+    background-color: grey;
+    border: 1px solid #F7CE68;
+    border-width: 2px;
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+}
+
+/**Cells in Each Row created through JS*/
+.dataRow > td{
+    color: #dbd9d9;
+    padding: 7px;
+    text-align: center;
+    border: 1px solid #FBAB7E;
+    font-size: small;
+    font-weight: 600;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/**Delete Button */
+.deleteRow{
+    display: inline-block;
+    padding: 0.28rem 1rem;
+    font-size: 12spx;
+    font-weight: 600;
+    color: white;
+    border: 3px solid rgb(252, 70, 100);
+    cursor: pointer;
+    position: relative;
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    font-family: inherit;
+    border-radius: 20px;
+   }
+   
+   .deleteRow::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(252, 70, 100);
+    transform: translateX(-100%);
+    transition: all .3s;
+    z-index: -1;
+   }
+   
+   .deleteRow:hover::before {
+    transform: translateX(0); 
+  }
+
+  /** Edit Button */
+  .editRow{
+    font-size: 12px;
+    font-weight: 700;
+    padding: 0.5em 1em;
+    border: transparent;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    background: rgb(36, 55, 74);
+    color: white;
+    border-radius: 4px;
+    outline: none;
+}
+
+.editRow:hover {
+ background: rgb(2,0,36);
+ background: linear-gradient(90deg, rgba(30,144,255,1) 0%, rgba(0,212,255,1) 100%);
+ cursor: pointer;
+}
+
+.editRow:active {
+ transform: translate(0em, 0.2em);
+}
+
+/** Warning Message */
+.message{
+    width: 90%;
+}
+
+.warning{
+    color: rgb(162, 9, 9);
+    width: 100%;
+}
+
+/** App Features */
+.features{
+    padding-left: 45px;
+    margin-top: -20px;
+}
+
+#entryStatus{
+    color: #F7CE68;
+}
